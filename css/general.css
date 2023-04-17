@@ -46,10 +46,6 @@ form input::placeholder{
     bottom: 3px;
 }
 
-form input::content{
-    color: red;
-}
-
 button{
     align-self: center;
     width: 132px;
