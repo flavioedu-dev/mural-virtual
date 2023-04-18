@@ -1,7 +1,4 @@
-.login-container{
-    margin: 0 auto;
-    width: 75%;
-}
+
 
 form input:nth-child(2){
     margin-bottom: 1em;
@@ -21,17 +18,4 @@ form input:nth-child(2){
 
 .img-darken{
     margin-bottom: 2em;
-}
-
-.register{
-    color: rgba(92, 208, 97, 0.9);
-    text-align: center;
-    font-size: 15px;
-    margin-top: 38px;
-}
-
-.register:hover{
-    color: rgb(92, 208, 98);
-    cursor: pointer;
-    text-decoration: underline;
 }

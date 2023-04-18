@@ -23,6 +23,11 @@ img{
     mix-blend-mode: darken;
 }
 
+.form-container{
+    margin: 0 auto;
+    width: 75%;
+}
+
 form{
     display: flex;
     flex-direction: column; 
@@ -60,4 +65,17 @@ button{
 button:hover{
     transform: scale(1.1);
     cursor: pointer;
+}
+
+.auth-btn{
+    color: rgba(92, 208, 97, 0.9);
+    text-align: center;
+    font-size: 15px;
+    margin-top: 38px;
+}
+
+.auth-btn:hover{
+    color: rgb(92, 208, 98);
+    cursor: pointer;
+    text-decoration: underline;
 }
