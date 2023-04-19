@@ -1,9 +1,16 @@
-.auth-btn{
-    color: rgba(0, 0, 0, 0.5);
+form input:nth-child(1){
+    margin-top: 2.5em;
 }
 
-.auth-btn:hover{
-    color: rgba(0, 0, 0, 0.5);;
+.auth:hover{
+    color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
     text-decoration: underline;
+}
+
+
+
+.auth a{
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
 }
