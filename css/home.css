@@ -52,6 +52,7 @@ form div{
 }
 
 .attachment-search{
+    display: none;
     position: absolute;
     width: 20px;
     left: 1rem;
