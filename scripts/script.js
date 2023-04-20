@@ -1,9 +1,14 @@
-const handleForm = () => {
-    let name = document.getElementsById("name")[0].value
-    let email = document.getElementsByName("email")[0].value
-    let pass = document.getElementsByName("pass")[0].value
+// Search input
+let search = document.getElementsByClassName("inp-search")[0]
+let lupa = document.getElementsByClassName("search-icon")[0]
 
-    console.log(name)
-    console.log(email)
-    console.log(pass)
-}
+search.addEventListener('focus', () => {
+    console.log(search.value)
+    lupa.style.display = 'none'
+})
+
+search.addEventListener('blur', () => {
+    if(search.value == ''){
+        lupa.style.display = 'block'
+    }
+})
