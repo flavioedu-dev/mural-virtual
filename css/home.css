@@ -22,6 +22,7 @@ form div{
 
 .inp-search{
     all: unset;
+    display: block;
     background-color: #E0E0E0;
     border-radius: 50px;
     margin: 0 auto;
@@ -40,9 +41,7 @@ form div{
 }
 
 .inp-search:focus{
-    width: 20rem;
-    height: 6.5rem;
-    border-radius: 5px;
+    width: 25rem;
 }
 
 .search-icon{
@@ -58,4 +57,46 @@ form div{
     left: 1rem;
     bottom: 10px;
     cursor: pointer;
+}
+
+.pesq{
+    display: none;
+    border: 0;
+    width: 15rem; 
+    height: 2.5rem; 
+    border-radius: 5px; 
+    padding-bottom: 0;
+    padding-left: 20px; 
+    background-color: #E0E0E0;
+    border-radius: 5px;
+    transition: .5s; 
+}
+
+.pesq::placeholder{
+    text-align: center;
+}
+
+.pesq:focus{
+    width: 25rem; 
+    height: 10.5rem; 
+    border-radius: 5px; 
+    padding-bottom: 8rem;
+    padding-left: 20px; 
+    background-color: #E0E0E0;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: .5s;  
+}
+
+#bott{
+    width: 63px;
+    float: right;
+    position: fixed;
+    right: 2.5%;
+    top: 87%;
+    border: 0;
+}
+
+#bott img{
+    width: 100%;
 }
