@@ -14,13 +14,9 @@ form{
 
 form div{
     position: relative;
-    /* border: 1px solid red; */
-    /* padding-bottom: 2rem;  
-    background-color: #E0E0E0; ---> Adicionar essas propriedades quando o . inp-search estiver focado(focus)
-    border-radius: 5px; */
 }
 
-.inp-search{
+.inp-search, .pesq{
     all: unset;
     display: block;
     background-color: #E0E0E0;
@@ -41,7 +37,7 @@ form div{
 }
 
 .inp-search:focus{
-    width: 25rem;
+    width: 20rem;
 }
 
 .search-icon{
@@ -61,15 +57,7 @@ form div{
 
 .pesq{
     display: none;
-    border: 0;
-    width: 15rem; 
-    height: 2.5rem; 
-    border-radius: 5px; 
-    padding-bottom: 0;
-    padding-left: 20px; 
-    background-color: #E0E0E0;
-    border-radius: 5px;
-    transition: .5s; 
+    font-size: .9rem;
 }
 
 .pesq::placeholder{
@@ -77,8 +65,8 @@ form div{
 }
 
 .pesq:focus{
-    width: 25rem; 
-    height: 10.5rem; 
+    width: 20rem; 
+    height: 10rem; 
     border-radius: 5px; 
     padding-bottom: 8rem;
     padding-left: 20px; 
@@ -89,14 +77,9 @@ form div{
 }
 
 #bott{
-    width: 63px;
-    float: right;
     position: fixed;
-    right: 2.5%;
+    width: 63px;
+    right: 4%;
     top: 87%;
-    border: 0;
-}
-
-#bott img{
-    width: 100%;
+    border: none;
 }
