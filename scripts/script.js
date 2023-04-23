@@ -43,3 +43,42 @@ pesq.addEventListener('blur', () =>{
     attachment.style.display = 'none'
     containerSearch.style = "padding-bottom: -2rem;"
 })
+
+// Hiding information the exceeds the limit
+let textPost = document.getElementsByClassName("text-post")
+
+const textPostList = [...textPost]
+
+const beforeTexts = []
+
+textPostList.forEach((post, i) => {
+
+    if(post.innerHTML.length > 299){
+
+        beforeTexts.push(textPost[i].innerText)
+        let newText = textPost[i].innerText.substring(0, 291)
+
+        textPost[i].innerText = newText
+        let more = document.createElement("span")
+        more.setAttribute("class", `more`)
+        more.innerHTML = "Ver mais"
+        textPost[i].appendChild(more)
+
+    }
+})
+
+// Show more informations
+let more = document.getElementsByClassName("more")
+
+const moreList = [...more]
+
+moreList.forEach((item, i) => {
+    
+    item.addEventListener("click", () => {
+        console.log(`Item ${i}`)
+
+        console.log(item.parentNode)
+
+        item.parentNode.innerHTML = beforeTexts[i]
+    })
+})
