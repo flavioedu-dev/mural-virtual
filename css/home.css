@@ -76,6 +76,10 @@ form div{
     transition: .5s;  
 }
 
+.file{
+    all: unset;
+}
+
 #bott{
     position: fixed;
     width: 63px;

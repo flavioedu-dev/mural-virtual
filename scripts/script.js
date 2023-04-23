@@ -9,7 +9,6 @@ let containerSearch = document.getElementsByClassName("search-container")[0]
 const meuBotao = document.getElementById("bott");
 let botaoAtivado = false;
 meuBotao.addEventListener("click", function() {
-    console.log(botaoAtivado)
     if(botaoAtivado == false){
         pesq.style.display = 'block'
         search.style.display = 'none'
@@ -73,7 +72,7 @@ let more = document.getElementsByClassName("more")
 const moreList = [...more]
 
 moreList.forEach((item, i) => {
-    
+
     item.addEventListener("click", () => {
         console.log(`Item ${i}`)
 
