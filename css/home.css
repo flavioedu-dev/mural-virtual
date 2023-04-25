@@ -16,6 +16,11 @@ form div{
     position: relative;
 }
 
+.search-container{
+    max-width: 20rem;
+    border-radius: 5px;
+}
+
 .inp-search, .pesq{
     all: unset;
     display: block;
@@ -47,12 +52,11 @@ form div{
 }
 
 .attachment-search{
-    display: block;
-    opacity: 0;
+    display: none;
     position: absolute;
-    width: 20px;
+    width: 22px;
     left: 1rem;
-    bottom: 10px;
+    bottom: 12px;
     cursor: pointer; 
 }
 
@@ -60,27 +64,39 @@ form div{
     display: none;
 }
 
+.attachment-files{
+    display: none;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.attachment-files .file-item{
+    margin: .4rem 2rem;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    text-decoration: none;
+    color:  #000;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.attachment-files .file-item:hover{
+    background-color: #bebebe;
+}
+
 .pesq{
     display: none;
     font-size: .9rem;
+    width: 20rem;
+    height: auto;
+    padding-bottom: 8rem;
+    border-radius: 5px;
+    border-bottom: 2.5rem solid transparent;
 }
 
 .pesq::placeholder{
     text-align: center;
-}
-
-.pesq:focus{
-    width: 20rem; 
-    height: 10rem;
-    border-radius: 5px; 
-    padding-bottom: 8rem;
-    padding-left: 20px;
-    background-color: #E0E0E0;
-    border-radius: 5px;
-    font-family: inherit;
-    transition: .5s;  
-
-    border-bottom: 2rem solid #E0E0E0;
 }
 
 #bott{
