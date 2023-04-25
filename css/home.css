@@ -79,10 +79,19 @@ form div{
     color:  #000;
     cursor: pointer;
     transition: .5s;
+    /* position: relative; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .attachment-files .file-item:hover{
     background-color: #bebebe;
+}
+
+.delete-icon{
+    width: 15px;
+    cursor: pointer;
 }
 
 .pesq{

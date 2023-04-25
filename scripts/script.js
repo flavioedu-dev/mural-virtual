@@ -70,8 +70,24 @@ file.onchange = () => {
         newItem.setAttribute("target", `_blank`)
         newItem.setAttribute("class", `file-item`)
 
+        let deleteIcon = document.createElement("img")
+        deleteIcon.setAttribute("src", "../img/x-icon.png")
+        deleteIcon.setAttribute("alt", "delete")
+        deleteIcon.setAttribute("class", "delete-icon")
+        
+        newItem.appendChild(deleteIcon)
         attachmentFiles.appendChild(newItem)
     }
+}
+
+// Delete item
+let deleteItem = document.getElementsByClassName("delete-icon")
+
+console.log(deleteItem)
+
+
+attachmentFiles.onclick = (e) => {
+    console.log(e.target)
 }
 
 // Hiding information the exceeds the limit
