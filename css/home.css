@@ -75,14 +75,18 @@ form div{
     padding: 10px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    text-decoration: none;
-    color:  #000;
+    
     cursor: pointer;
     transition: .5s;
-    /* position: relative; */
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
+}
+
+.link-item{
+    text-decoration: none;
+    color:  #000;
 }
 
 .attachment-files .file-item:hover{

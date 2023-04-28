@@ -64,30 +64,33 @@ file.onchange = () => {
 
         let itemURL = URL.createObjectURL(itemFile)
 
-        let newItem = document.createElement("a")
-        newItem.innerHTML = itemFile.name
-        newItem.setAttribute("href", `${itemURL}`)
-        newItem.setAttribute("target", `_blank`)
+        const newItem = document.createElement("p")
         newItem.setAttribute("class", `file-item`)
+
+        let newLink = document.createElement("a")
+        newLink.innerHTML = itemFile.name
+        newLink.setAttribute("href", `${itemURL}`)
+        newLink.setAttribute("target", `_blank`)
+        newLink.setAttribute("class", `link-item`)
 
         let deleteIcon = document.createElement("img")
         deleteIcon.setAttribute("src", "../img/x-icon.png")
         deleteIcon.setAttribute("alt", "delete")
         deleteIcon.setAttribute("class", "delete-icon")
         
+        newItem.appendChild(newLink)
         newItem.appendChild(deleteIcon)
         attachmentFiles.appendChild(newItem)
     }
 }
 
-// Delete item
-let deleteItem = document.getElementsByClassName("delete-icon")
-
-console.log(deleteItem)
-
-
+// Delete attachment item
 attachmentFiles.onclick = (e) => {
-    console.log(e.target)
+    const element = e.target
+
+    if(element.className === "delete-icon"){
+        attachmentFiles.removeChild(e.target.parentNode)
+    }
 }
 
 // Hiding information the exceeds the limit
