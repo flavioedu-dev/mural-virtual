@@ -114,6 +114,17 @@ form div{
     top: 8px;
 }
 
+.pesq-options{
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    font-size: .9rem;
+}
+
+.pesq-options span{
+    margin-right: .8rem;
+}
+
 .attachment-search{
     display: none;
     position: absolute;

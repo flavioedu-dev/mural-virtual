@@ -1,6 +1,7 @@
 // Search input
 let search = document.getElementsByClassName("inp-search")[0]
 let pesq = document.getElementsByClassName("pesq")[0]
+let options = document.getElementsByClassName("pesq-options")
 let lupa = document.getElementsByClassName("search-icon")[0]
 let attachment = document.getElementsByClassName("attachment-search")[0]
 let containerSearch = document.getElementsByClassName("search-container")[0]
@@ -44,6 +45,12 @@ search.addEventListener('blur', () => {
         lupa.style.display = 'block'
     }
 })
+
+// Handle form options
+console.log(options)
+options.onclick = (e) => {
+    console.log(e.target)
+}
 
 // Attachment file
 attachment.onclick = () => {
