@@ -90,6 +90,7 @@ attachmentFiles.onclick = (e) => {
 
     if(element.className === "delete-icon"){
         attachmentFiles.removeChild(e.target.parentNode)
+        file.value = ""
     }
 }
 
