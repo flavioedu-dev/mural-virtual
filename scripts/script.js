@@ -1,7 +1,7 @@
 // Search input
 let search = document.getElementsByClassName("inp-search")[0]
 let pesq = document.getElementsByClassName("pesq")[0]
-let options = document.getElementsByClassName("pesq-options")
+let options = document.getElementsByClassName("pesq-options")[0]
 let lupa = document.getElementsByClassName("search-icon")[0]
 let attachment = document.getElementsByClassName("attachment-search")[0]
 let containerSearch = document.getElementsByClassName("search-container")[0]
@@ -19,7 +19,7 @@ meuBotao.addEventListener("click", function() {
             botaoAtivado = true
             attachment.style.display = 'block'
             containerSearch.style = "background-color: #E0E0E0;"
-
+            options.style.display = 'block'
             if(attachmentFiles.children.length !== 0){
                 attachmentFiles.style.display = 'flex'
                 pesq.style.borderBottom = '10px solid transparent'
@@ -31,7 +31,8 @@ meuBotao.addEventListener("click", function() {
             botaoAtivado = false
             attachment.style.display = 'none'
             attachmentFiles.style.display = 'none'
-            containerSearch.style = "background-color: transparent;"   
+            containerSearch.style = "background-color: transparent;"
+            options.style.display = 'none'   
     }
 
 });
@@ -139,3 +140,26 @@ moreList.forEach((item, i) => {
         item.parentNode.innerHTML = beforeTexts[i]
     })
 })
+
+//Menu
+let menu = document.getElementsByClassName("menu")[0]
+let ico_menu = document.getElementsByClassName("ico-menu")[0]
+
+const eventoClick = new MouseEvent('click', {
+    view: window,
+    bubbles: true,
+    cancelable: true
+});
+
+ico_menu.addEventListener('click', () =>{
+    menu.style.display = 'block'
+    menu.dispatchEvent(eventoClick);
+});
+
+menu.addEventListener('blur', () => {
+    menu.style.display = 'none'
+})
+
+document.getElementById('icon-sair').addEventListener('click', function() {
+    window.location.href = '../pages/login.html';
+  });
