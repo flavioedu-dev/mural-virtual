@@ -49,7 +49,6 @@ search.addEventListener('blur', () => {
 })
 
 // Rendering posts
-const beforeTexts = []
 const renderPosts = (array) => {
     array.forEach((post) => {
 
@@ -67,25 +66,7 @@ const renderPosts = (array) => {
         innerDivP.setAttribute("class", "text-post")
         
         innerDivSpan.innerText = "Flávio"
-        
-        let newText
-        if(post.length > 299){
-            console.log("Else")
-
-            beforeTexts.push(post)
-            newText = post.substring(0, 291)
-            innerDivP.innerText = newText
-    
-            const more = document.createElement("span")
-            more.setAttribute("class", `more`)
-            more.innerHTML = "Ver mais"
-            innerDivP.appendChild(more)
-    
-        }else{
-            console.log("Else")
-            newText = post
-            innerDivP.innerText = newText
-        }
+        innerDivP.innerText = post
 
         innerDivPost.appendChild(innerDivSpan)
         innerDivPost.appendChild(innerDivP)
@@ -174,21 +155,21 @@ let textPost = document.getElementsByClassName("text-post")
 
 const textPostList = [...textPost]
 
-// const beforeTexts = []
+const beforeTexts = []
 
 textPostList.forEach((post, i) => {
 
-    if(post.innerHTML.length > 299){
+    let text = post.innerHTML.replace(/\s+/g, " ")
 
+    if(text.length > 299){
         beforeTexts.push(textPost[i].innerText)
         let newText = textPost[i].innerText.substring(0, 291)
-
         textPost[i].innerText = newText
+
         let more = document.createElement("span")
         more.setAttribute("class", `more`)
         more.innerHTML = "Ver mais"
         textPost[i].appendChild(more)
-
     }
 })
 
