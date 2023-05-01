@@ -197,12 +197,22 @@ form div{
     text-align: center;
 }
 
+.pesq-options span{
+    cursor: pointer;
+    padding: 10px;
+}
+
+.pesq-options span:hover{
+    background-color: #bebebe;
+}
+
 #bott{
     position: fixed;
     width: 63px;
     right: 4%;
     top: 87%;
     border: none;
+    background-color: transparent;
 }
 
 .posts-container{  
@@ -229,6 +239,10 @@ form div{
 .posts-container div p{
     text-align: justify;
     font-size: 14px;
+}
+
+.text-post{
+    word-wrap: break-word;
 }
 
 .more{
