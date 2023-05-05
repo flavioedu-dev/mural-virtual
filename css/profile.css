@@ -1,0 +1,53 @@
+.img-profile{
+    width: 8.2rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 57px;
+    text-align: justify;
+    position: relative;
+}
+
+.change-profile{
+    position: absolute;
+    right: 57px;
+    top: 2.5rem;
+}
+
+.person, .person-data{
+    width: 100%;
+}
+
+.person{
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.person h1{
+    margin-top: 1.5rem;
+}
+
+.person-data p:not(:last-child){
+    display: flex;
+    flex-direction: column;
+}
+
+.person-data{
+    padding: 2rem 0;
+}
+
+.person-data p{
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+.person-data p span{
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
