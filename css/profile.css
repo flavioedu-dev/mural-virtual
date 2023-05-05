@@ -16,6 +16,7 @@ main{
     position: absolute;
     right: 57px;
     top: 2.5rem;
+    cursor: pointer;
 }
 
 .person, .person-data{
