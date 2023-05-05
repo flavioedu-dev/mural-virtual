@@ -1,84 +1,3 @@
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #000;
-}
-
-.menu{
-    display: none;
-    background-color: #E0E0E0;
-    position: fixed;
-    width:85%;
-    height: 100vh;
-    z-index: 1;
-    padding-left: 20px;
-    padding-top: 20px;
-    padding-right: 20px;
-}
-
-.header-per{
-    margin-bottom: 20px;
-}
-
-.img-per{
-    width: 25%;
-}
-
-.img-per img{
-    width: 100%;
-}
-
-.nome{
-    font-weight: bold;
-}
-
-.type{
-    font-size: 15px;
-    
-}
-
-.main-per{
-    padding: 20px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.23);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.23) ;
-}
-
-.opc-per{
-    display: flex;
-    margin-bottom: 34px;
-    align-items: center;
-}
-
-.opc-per:hover{
-    background-color:#d1cfcf ;
-    padding: 10px;
-}
-
-.opc-per p{
-    font-size: 140%;
-    font-weight: bold;
-}
-
-.opc-per a{
-    text-decoration: none;
-    color: #000;
-}
-
-#icon-sair{
-    margin-bottom: 0;
-}
-
-.icon-per{
-    width: 5%;
-    margin-right: 10px;
-}
-
-.icon-per img{
-    width: 100%;
-}
-
 form{
     display: flex;
     justify-content: center;
@@ -197,12 +116,22 @@ form div{
     text-align: center;
 }
 
+.pesq-options span{
+    cursor: pointer;
+    padding: 10px;
+}
+
+.pesq-options span:hover{
+    background-color: #bebebe;
+}
+
 #bott{
     position: fixed;
     width: 63px;
     right: 4%;
     top: 87%;
     border: none;
+    background-color: transparent;
 }
 
 .posts-container{  
@@ -229,6 +158,10 @@ form div{
 .posts-container div p{
     text-align: justify;
     font-size: 14px;
+}
+
+.text-post{
+    word-wrap: break-word;
 }
 
 .more{

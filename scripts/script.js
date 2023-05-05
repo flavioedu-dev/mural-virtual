@@ -7,6 +7,7 @@ let attachment = document.getElementsByClassName("attachment-search")[0]
 let containerSearch = document.getElementsByClassName("search-container")[0]
 let attachmentFiles = document.getElementsByClassName("attachment-files")[0]
 let file = document.getElementsByClassName("inp-file")[0]
+let postsContainer = document.getElementsByClassName("posts-container")[0]
 
 
 const meuBotao = document.getElementById("bott");
@@ -47,10 +48,57 @@ search.addEventListener('blur', () => {
     }
 })
 
+// Rendering posts
+const renderPosts = (array) => {
+    array.forEach((post) => {
+
+        // Creating post item
+        const divPost = document.createElement("div")
+        divPost.setAttribute("class", "post")
+
+        const imgPost = document.createElement("img")
+        imgPost.setAttribute("src", "../img/Perfil LinkedIn.png")
+        imgPost.setAttribute("alt", "profile")
+
+        const innerDivPost = document.createElement("div")
+        const innerDivSpan = document.createElement("span")
+        const innerDivP = document.createElement("p")
+        innerDivP.setAttribute("class", "text-post")
+        
+        innerDivSpan.innerText = "Flávio"
+        innerDivP.innerText = post
+
+        innerDivPost.appendChild(innerDivSpan)
+        innerDivPost.appendChild(innerDivP)
+
+        divPost.appendChild(imgPost)
+        divPost.appendChild(innerDivPost)
+
+        postsContainer.appendChild(divPost)
+    })
+}
+
+const posts = []
+
 // Handle form options
-console.log(options)
 options.onclick = (e) => {
-    console.log(e.target)
+    console.log(e.target.lastChild.data)
+
+    if(e.target.lastChild.data === "Limpar"){
+        pesq.value = ""
+    }
+
+    if(e.target.lastChild.data === "Enviar"){
+        posts.push(pesq.value)
+        console.log(posts)
+        pesq.value = ""
+
+        renderPosts(posts)
+    }
+}
+
+posts.length.onchange = () => {
+    console.log("Mudou")
 }
 
 // Attachment file
@@ -111,24 +159,24 @@ const beforeTexts = []
 
 textPostList.forEach((post, i) => {
 
-    if(post.innerHTML.length > 299){
+    let text = post.innerHTML.replace(/\s+/g, " ")
 
+    if(text.length > 299){
         beforeTexts.push(textPost[i].innerText)
         let newText = textPost[i].innerText.substring(0, 291)
-
         textPost[i].innerText = newText
+
         let more = document.createElement("span")
         more.setAttribute("class", `more`)
         more.innerHTML = "Ver mais"
         textPost[i].appendChild(more)
-
     }
 })
 
 // Show more informations
 let more = document.getElementsByClassName("more")
 
-const moreList = [...more]
+let moreList = [...more]
 
 moreList.forEach((item, i) => {
 
