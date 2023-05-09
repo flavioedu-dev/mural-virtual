@@ -170,4 +170,34 @@ form div{
 
 @media (min-width:600px){
 
+    nav{
+        border-bottom: 0px solid #000;
+        position: fixed;
+        right: 0.2%;
+        bottom: 92%;
+    }
+
+    .ico-menu{
+        display: none;
+    }
+
+    main{
+        width: 45%;
+        margin-left: 25%;
+        margin-top: 0%;
+        height: 100%;
+        border-right: 1px solid rgba(0, 0, 0, 0.116);
+        border-left: 1px solid rgba(0, 0, 0, 0.116);
+        margin-left: 29.5%;
+    }
+
+    main form {
+        margin-top: 0;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        
+    }
+    
 }
+
+

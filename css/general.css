@@ -96,3 +96,50 @@ nav{
 .icon-per img{
     width: 100%;
 }
+
+@media (min-width:600px){
+
+    body{
+        background-color: #ffff;
+    }
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+        max-width: 70px;
+        align-items: center;
+        border-right: 1px solid rgba(0, 0, 0, 0.116);
+        background-color: rgba(245, 244, 244);
+    }
+
+    .header-per p{
+        display: none;
+    }
+
+    .img-per{
+        width: 50px;
+    }
+
+    .main-per{
+        border: 0;
+    }
+
+    .opc-per{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20%;
+    }
+
+    .opc-per:hover{
+        background-color:#d1cfcf ;
+    }
+
+    .opc-per p{
+        display: none;
+    }
+
+    .icon-per{
+        width: 30px;
+    }
+
+}
