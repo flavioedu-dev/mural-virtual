@@ -36,3 +36,16 @@ const register = async () => {
     }, 1000)
   }
 }
+
+const login = async () => {
+  const email = document.getElementById("email").value
+  const senha = document.getElementById("pass").value
+
+  console.log(email)
+
+  const res = await fetch(`${url}/user/${email}`).then(res => res.json())
+
+  console.log(res)
+}
+
+// fetch(`${url}/user/tratamentodedados123@gmail.com`).then(res => console.log(res))

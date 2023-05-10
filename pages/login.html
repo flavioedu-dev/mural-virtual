@@ -16,16 +16,17 @@
     </div>
     <div class="form-container">
         <form>
-            <input type="text" name="user" id="user" placeholder="Email">
+            <input type="email" name="email" id="email" placeholder="Email">
             <input type="password" name="pass" id="pass" placeholder="Senha">
 
             <a href="" class="forgot-pass">Esqueceu a senha?</a>
 
-            <button>Login</button>
+            <button type="button" onclick="login()">Login</button>
         </form>
 
         <p class="auth"><a href="register.html">Cadastre-se</a></p>
     </div>
     
+    <script src="../scripts/api.js"></script>
 </body>
 </html>
