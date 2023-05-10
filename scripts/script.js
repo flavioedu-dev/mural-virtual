@@ -192,6 +192,10 @@ moreList.forEach((item, i) => {
 //Menu
 let menu = document.getElementsByClassName("menu")[0]
 let ico_menu = document.getElementsByClassName("ico-menu")[0]
+let p = document.getElementsByClassName("type")[0]
+let estilo = window.getComputedStyle(p)
+let cont_p = estilo.getPropertyValue("display")
+console.log(cont_p)
 
 const eventoClick = new MouseEvent('click', {
     view: window,
@@ -205,9 +209,16 @@ ico_menu.addEventListener('click', () =>{
 });
 
 menu.addEventListener('blur', () => {
-    menu.style.display = 'none'
+    if(cont_p == 'block'){
+        menu.style.display = 'none'
+    }
 })
 
 document.getElementById('icon-sair').addEventListener('click', function() {
     window.location.href = '../pages/login.html';
-});
+  });
+
+  //Filtragem
+
+  let pesquisa = document.getElementsByClassName("inp-search")[0]
+  
