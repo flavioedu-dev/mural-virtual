@@ -19,12 +19,12 @@
             <input type="text" name="user" id="user" placeholder="Nome completo">
             <input type="email" name="email" id="email" placeholder="Email">
             <input type="password" name="pass" id="pass" placeholder="Senha">
-            <input type="confirm-password" name="confirm-pass" id="confirm-pass" placeholder="Confirmar Senha">
+            <input type="password" name="confirm-pass" id="confirm-pass" placeholder="Confirmar Senha">
 
-            <button>Cadastrar</button>
+            <button type="button" onclick="register()">Cadastrar</button>
         </form>
         <p class="auth"><a href="login.html">Já possui uma conta? Entrar</a></p>
 
-        <script type="module" src="scripts/script.js"></script>
+        <script src="../scripts/api.js"></script>
 </body>
 </html>
