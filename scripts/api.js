@@ -45,7 +45,6 @@ const login = async () => {
     email,
     senha
   }
-  console.log(user)
 
   const res = await fetch(`${url}/login`, {
     method: "POST",
@@ -55,7 +54,7 @@ const login = async () => {
     body: JSON.stringify(user)
   }).then(res => res.json())
 
-  console.log(res)
+  console.log(res.body)
 
   if(res.headers.token){
     localStorage.setItem("authToken", res.headers.token)
