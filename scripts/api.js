@@ -17,7 +17,7 @@ const register = async () => {
     senha
   }
 
-  const res = await fetch(`${url}/users`, {
+  const res = await fetch(`${url}/register`, {
     method: "POST",
     headers: {
       "content-type": "application/json"
@@ -41,11 +41,25 @@ const login = async () => {
   const email = document.getElementById("email").value
   const senha = document.getElementById("pass").value
 
-  console.log(email)
+  const user = {
+    email,
+    senha
+  }
+  console.log(user)
 
-  const res = await fetch(`${url}/user/${email}`).then(res => res.json())
+  const res = await fetch(`${url}/login`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
+    body: JSON.stringify(user)
+  }).then(res => res.json())
 
   console.log(res)
-}
 
-// fetch(`${url}/user/tratamentodedados123@gmail.com`).then(res => console.log(res))
+  if(res.headers.token){
+    localStorage.setItem("authToken", res.headers.token)
+
+    window.location.replace("../pages/home.html")
+  }
+}
