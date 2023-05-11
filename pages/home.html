@@ -8,8 +8,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/home.css">
+    <script src="../scripts/checkToken.js"></script>
 </head>
-<body>
+<body onbeforeunload="checkTokenIsValid()">
     
     <header>
         <div class="menu" tabindex="0">
