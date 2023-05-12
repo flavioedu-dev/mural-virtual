@@ -214,9 +214,9 @@ menu.addEventListener('blur', () => {
     }
 })
 
-document.getElementById('icon-sair').addEventListener('click', function() {
-    window.location.href = '../pages/login.html';
-  });
+// document.getElementById('icon-sair').addEventListener('click', function() {
+//     window.location.href = '../pages/login.html';
+//   });
 
   //Filtragem
 

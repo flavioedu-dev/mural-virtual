@@ -78,5 +78,10 @@ const profile = async () => {
   document.getElementsByClassName("data-item")[1].innerText = email
   document.getElementsByClassName("data-item")[2].innerText = telefone || "Não informado."
   document.getElementsByClassName("data-item")[3].innerText = postagens
+}
 
+const logout = () => {
+  localStorage.removeItem("userId")
+  localStorage.removeItem("authToken")
+  location.reload(true)
 }

@@ -1,8 +1,13 @@
 const urlPath = "http://localhost:8000"
 
 const checkTokenIsValid = async () => {
+  const currentPath = window.location.pathname
+
   const token = localStorage.getItem("authToken")
   if(!token){
+    if(currentPath.includes("home") || currentPath.includes("profile")){
+      window.location.replace("../pages/login.html")
+    }
     return console.log("Token not found.")
   }
 
@@ -13,8 +18,9 @@ const checkTokenIsValid = async () => {
     }
   }).then(res => res.json())
   
-  const currentPath = window.location.pathname
+  
   if(res.statusCode && res.statusCode !== 200){
+    console.log("entrou1")
     if(currentPath.includes("home") || currentPath.includes("profile")){
       window.location.replace("../pages/login.html")
     }
