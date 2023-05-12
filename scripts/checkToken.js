@@ -24,6 +24,8 @@ const checkTokenIsValid = async () => {
   if(currentPath.includes("login")){
     window.location.replace("../pages/home.html")
   }
+
+  localStorage.setItem("userId", res.id_usuario)
   return
 }
 
