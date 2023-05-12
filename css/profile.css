@@ -44,11 +44,11 @@ main{
 }
 
 .person-data p{
-    font-size: 15px;
     margin-top: 12px;
+    font-weight: bold;
 }
 
-.person-data p span{
-    font-weight: bold;
-    margin-bottom: .5rem;
+.person-data .data-item{
+    font-weight: normal;
+    margin-top: .5rem;
 }

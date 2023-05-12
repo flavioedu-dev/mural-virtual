@@ -10,7 +10,7 @@
     <!-- Token -->
     <script src="../scripts/checkToken.js"></script>
 </head>
-<body>
+<body onload="profile()">
     <div class="menu" tabindex="0" onblur={handleBlur}>
         <section class="header-per">
             <div class="img-per">
@@ -53,17 +53,22 @@
             <h1>Ruan Lauro</h1>
         </section>
         <section class="person-data">
-            <p><span>Nome:</span>
-                Ruan Lauro Cardoso da Silva Monteiro</p>
-            <p><span>Email:</span>
-                capic.2022118tads0170@aluno.ifpi.edu.br
+            <p>Nome:
+                <span class="data-item">Ruan Lauro Cardoso da Silva Monteiro</span>
             </p>
-            <p><span>Número:</span>
-                (89)988268259</p>
-            <p><span>Postagens:</span> 1</p>
+            <p>Email:
+                <span class="data-item">capic.2022118tads0170@aluno.ifpi.edu.br</span>
+            </p>
+            <p>Número:
+                <span class="data-item">(89)988268259</span>
+            </p>
+            <p>Postagens: 
+                <span class="data-item">1</span>
+            </p>
         </section>
     </main>
 
     <script src="../scripts/profile.js"></script>
+    <script src="../scripts/api.js"></script>
 </body>
 </html>

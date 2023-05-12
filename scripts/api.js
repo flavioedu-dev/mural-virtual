@@ -62,3 +62,21 @@ const login = async () => {
     window.location.replace("../pages/home.html")
   }
 }
+
+const profile = async () => {
+  const token = localStorage.getItem("authToken")
+  const id = localStorage.getItem("userId");
+  const res = await fetch(`${url}/user/${id}`, {
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  }).then(res => res.json())
+
+  const { nome, email, telefone, postagens } = res
+
+  document.getElementsByClassName("data-item")[0].innerText = nome
+  document.getElementsByClassName("data-item")[1].innerText = email
+  document.getElementsByClassName("data-item")[2].innerText = telefone || "Não informado."
+  document.getElementsByClassName("data-item")[3].innerText = postagens
+
+}
