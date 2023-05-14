@@ -95,7 +95,7 @@ const loadPosts = async () => {
   const posts = await fetch(`${url}/posts`).then((res) => res.json());
 
   const postsContainer = document.querySelector(".posts-container");
-  posts.forEach((post, i) => {
+  posts.forEach((post) => {
     const postItem = document.createElement("div");
     postItem.setAttribute("class", "post");
 
@@ -119,3 +119,24 @@ const loadPosts = async () => {
     postsContainer.appendChild(postItem);
   });
 };
+
+
+const createPost = async () => {
+  const id_usuario = parseInt(localStorage.getItem("userId"))
+  const conteudo = document.querySelector(".pesq").value
+
+  const post = {
+    id_usuario,
+    conteudo
+  }
+
+  const resPost = await fetch(`${url}/posts`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(post)
+  }).then(res => res.json())
+
+  console.log(resPost)
+}
