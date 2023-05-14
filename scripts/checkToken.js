@@ -11,7 +11,7 @@ const checkTokenIsValid = async () => {
     return console.log("Token not found.")
   }
 
-  const res = await fetch(`${urlPath}/check-token`, {
+  const res = await fetch(`${urlPath}/users/check-token`, {
     method: "POST",
     headers: {
       "Authorization": `Bearer ${token}`

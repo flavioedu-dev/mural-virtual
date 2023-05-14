@@ -11,8 +11,7 @@
     <!-- Token -->
     <script src="../scripts/checkToken.js"></script>
 </head>
-<body>
-    
+<body onload="loadPosts()">
     <header>
         <div class="menu" tabindex="0">
             <section class="header-per">
@@ -59,7 +58,7 @@
 
                 <textarea class="pesq" placeholder="Escreva a informação"></textarea>
                 <img src="../img/anexo.png" alt="anexo" class="attachment-search">
-                <p class="pesq-options"><span>Limpar</span><span>Enviar</span></p>
+                <p class="pesq-options"><span>Limpar</span><span onclick="createPost()">Enviar</span></p>
 
                 <input type="file" name="file" class="inp-file">
                 <div class="attachment-files"></div>
