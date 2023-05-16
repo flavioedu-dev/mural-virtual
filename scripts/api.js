@@ -57,10 +57,9 @@ const login = async () => {
     body: JSON.stringify(user),
   }).then((res) => res.json());
 
-  console.log(res.body);
-
   if (res.headers.token) {
     localStorage.setItem("authToken", res.headers.token);
+    localStorage.setItem("userId", res.body.id_usuario);
 
     window.location.replace("../pages/home.html");
   }
@@ -74,6 +73,12 @@ const profile = async () => {
       "Authorization": `Bearer ${token}`,
     },
   }).then((res) => res.json());
+
+  console.log("res: ", res)
+
+  if(res.statusCode){
+    window.location.replace("../pages/login.html")
+  }
 
   const { nome, email, telefone, postagens } = res;
 
