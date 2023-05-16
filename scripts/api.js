@@ -65,6 +65,21 @@ const login = async () => {
   }
 };
 
+const checkTokenIsValid = async () => {
+  const token = localStorage.getItem("authToken")
+
+  const posts = await fetch(`${url}/posts`, {
+    method: "GET",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  }).then((res) => res.json());
+
+  if(posts.statusCode !== 401){
+    window.location.replace("../pages/home.html")
+  }
+}
+
 const profile = async () => {
   const token = localStorage.getItem("authToken");
   const id = localStorage.getItem("userId");
@@ -73,8 +88,6 @@ const profile = async () => {
       "Authorization": `Bearer ${token}`,
     },
   }).then((res) => res.json());
-
-  console.log("res: ", res)
 
   if(res.statusCode){
     window.location.replace("../pages/login.html")

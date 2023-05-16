@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/auth.css">
-    <!-- Token -->
-    <script src="../scripts/checkToken.js"></script>
+    <!-- API -->
+    <script src="../scripts/api.js"></script>
 </head>
-<body>
+<body onload="checkTokenIsValid()">
     <div class="logo-login">
         <img src="../img/Logo.png" alt="Logo" class="img-darken">
     </div>
@@ -28,7 +28,5 @@
 
         <p class="auth"><a href="register.html">Cadastre-se</a></p>
     </div>
-    
-    <script src="../scripts/api.js"></script>
 </body>
 </html>
