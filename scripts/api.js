@@ -71,7 +71,7 @@ const profile = async () => {
   const id = localStorage.getItem("userId");
   const res = await fetch(`${url}/users/user/${id}`, {
     headers: {
-      Authorization: `Bearer ${token}`,
+      "Authorization": `Bearer ${token}`,
     },
   }).then((res) => res.json());
 
@@ -92,7 +92,18 @@ const logout = () => {
 
 // Post
 const loadPosts = async () => {
-  const posts = await fetch(`${url}/posts`).then((res) => res.json());
+  const token = localStorage.getItem("authToken")
+
+  const posts = await fetch(`${url}/posts`, {
+    method: "GET",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  }).then((res) => res.json());
+
+  if(posts.statusCode === 401){
+    window.location.replace("../pages/login.html")
+  }
 
   const postsContainer = document.querySelector(".posts-container");
   posts.forEach((post) => {
