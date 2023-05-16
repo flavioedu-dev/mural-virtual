@@ -159,10 +159,12 @@ const createPost = async () => {
     conteudo
   }
 
+  const token = localStorage.getItem("authToken")
   const resPost = await fetch(`${url}/posts`, {
     method: "POST",
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}` 
     },
     body: JSON.stringify(post)
   }).then(res => res.json())

@@ -90,7 +90,6 @@ options.onclick = (e) => {
 
     if(e.target.lastChild.data === "Enviar"){
         posts.push(pesq.value)
-        console.log(posts)
         pesq.value = ""
 
         renderPosts(posts)
