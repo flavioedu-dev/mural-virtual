@@ -95,6 +95,8 @@ const profile = async () => {
 
   const { nome, email, telefone, postagens } = res;
 
+  document.querySelector(".user-name").innerText = nome;
+  document.querySelector(".nome-menu").innerText = nome;
   document.getElementsByClassName("data-item")[0].innerText = nome;
   document.getElementsByClassName("data-item")[1].innerText = email;
   document.getElementsByClassName("data-item")[2].innerText =
