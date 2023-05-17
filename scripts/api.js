@@ -60,26 +60,27 @@ const login = async () => {
   if (res.headers.token) {
     localStorage.setItem("authToken", res.headers.token);
     localStorage.setItem("userId", res.body.id_usuario);
+    localStorage.setItem("userName", res.body.nome);
 
     window.location.replace("../pages/home.html");
   }
 };
 
 const checkTokenIsValid = async () => {
-  const token = localStorage.getItem("authToken")
-
-  const posts = await fetch(`${url}/posts`, {
-    method: "GET",
+  const token = localStorage.getItem("authToken");
+  const id = localStorage.getItem("userId");
+  const res = await fetch(`${url}/users/user/${id}`, {
     headers: {
-      "Authorization": `Bearer ${token}`
-    }
+      "Authorization": `Bearer ${token}`,
+    },
   }).then((res) => res.json());
 
-  if(posts.statusCode !== 401){
+  if(res.statusCode !== 401){
     window.location.replace("../pages/home.html")
   }
 }
 
+// Loading profile data
 const profile = async () => {
   const token = localStorage.getItem("authToken");
   const id = localStorage.getItem("userId");
@@ -95,8 +96,8 @@ const profile = async () => {
 
   const { nome, email, telefone, postagens } = res;
 
+  document.querySelector(".nome-menu").innerText = localStorage.getItem("userName");
   document.querySelector(".user-name").innerText = nome;
-  document.querySelector(".nome-menu").innerText = nome;
   document.getElementsByClassName("data-item")[0].innerText = nome;
   document.getElementsByClassName("data-item")[1].innerText = email;
   document.getElementsByClassName("data-item")[2].innerText =
@@ -107,6 +108,7 @@ const profile = async () => {
 const logout = () => {
   localStorage.removeItem("userId");
   localStorage.removeItem("authToken");
+  localStorage.removeItem("userName");
   location.reload(true);
 };
 
@@ -124,6 +126,8 @@ const loadPosts = async () => {
   if(posts.statusCode === 401){
     window.location.replace("../pages/login.html")
   }
+
+  document.querySelector(".nome-menu").innerText = localStorage.getItem("userName");
 
   const postsContainer = document.querySelector(".posts-container");
   posts.forEach((post) => {
