@@ -94,10 +94,12 @@ const profile = async () => {
     window.location.replace("../pages/login.html")
   }
 
-  const { nome, email, telefone, postagens } = res;
+  console.log(res)
+
+  const { nome, email, telefone, postagens, username } = res;
 
   document.querySelector(".nome-menu").innerText = localStorage.getItem("userName");
-  document.querySelector(".user-name").innerText = nome;
+  document.querySelector(".user-name").innerText = username;
   document.getElementsByClassName("data-item")[0].innerText = nome;
   document.getElementsByClassName("data-item")[1].innerText = email;
   document.getElementsByClassName("data-item")[2].innerText =
