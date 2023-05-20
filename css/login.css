@@ -2,6 +2,11 @@ form input:nth-child(2){
     margin-bottom: 1em;
 }
 
+.form-container form button a{
+    text-decoration: none;
+    color: #FFF;
+}
+
 .forgot-pass{
     text-align: right;
     margin: .5em;
