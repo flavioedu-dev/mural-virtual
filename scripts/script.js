@@ -1,3 +1,7 @@
+const redirectToLogin = () => {
+    window.location.replace("./pages/login.html")
+}
+
 // Search input
 let search = document.getElementsByClassName("inp-search")[0]
 let pesq = document.getElementsByClassName("pesq")[0]
