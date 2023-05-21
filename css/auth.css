@@ -36,6 +36,7 @@ form input{
     margin-bottom: 1.5em;
     outline: none;
     line-height: 26px;
+    width: 100%;
 }
 
 form input::placeholder{

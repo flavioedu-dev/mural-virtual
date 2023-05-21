@@ -7,8 +7,8 @@
     <title>Mural Virtual - Cadastro</title>
     <!-- CSS -->
     <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/cadastro.css">
     <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
     <div class="logo-login">
@@ -16,15 +16,26 @@
     </div>
     <div class="form-container">
         <form>
-            <input type="text" name="user" id="user" placeholder="Nome completo">
-            <input type="email" name="email" id="email" placeholder="Email">
-            <input type="password" name="pass" id="pass" placeholder="Senha">
-            <input type="password" name="confirm-pass" id="confirm-pass" placeholder="Confirmar Senha">
+            <div class="user-data">
+                <input type="text" name="user" id="user" placeholder="Nome completo">
+                <input type="text" name="username" id="username" placeholder="Nome de usuário">
+                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="password" name="pass" id="pass" placeholder="Senha">
+                <input type="password" name="confirm-pass" id="confirm-pass" placeholder="Confirmar Senha">
+                <select name="Iam" id="select-Iam" onchange="checkIsAdmin()" required>
+                    <option value="I am" selected disabled class="opt-disabled">Eu sou</option>
+                    <option value="Aluno">Aluno</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Servidor">Servidor</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
 
             <button type="button" onclick="register()">Cadastrar</button>
         </form>
         <p class="auth"><a href="login.html">Já possui uma conta? Entrar</a></p>
 
         <script src="../scripts/api.js"></script>
+        <script src="../scripts/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,34 @@
+form input:nth-child(1){
+    margin-top: 2.5em;
+}
+
+.auth:hover{
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+
+.auth a{
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+#select-Iam{
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+    padding: 1em;
+    margin-bottom: 1.5em;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    outline: none;
+}
+
+#select-Iam option:not(:disabled){
+    color: #000;
+}
