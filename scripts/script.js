@@ -2,7 +2,7 @@ const redirectToLogin = () => {
   window.location.replace("./pages/login.html");
 };
 
-// Register
+// --- Register ---
 const checkIsAdmin = () => {
   const optSelected = document.getElementById("select-Iam");
   const form = document.querySelector(".user-data");
@@ -32,6 +32,18 @@ let containerSearch = document.getElementsByClassName("search-container")[0];
 let attachmentFiles = document.getElementsByClassName("attachment-files")[0];
 let file = document.getElementsByClassName("inp-file")[0];
 let postsContainer = document.getElementsByClassName("posts-container")[0];
+
+// Home
+
+const postsContainerArray = [...postsContainer.children]
+console.log(postsContainerArray)
+console.log(postsContainer.children)
+postsContainerArray.forEach((post) => {
+    post.addEventListener("click", () => {
+          console.log(post)
+          post.setAttribute("class", "post post-selected")
+        });
+})
 
 const meuBotao = document.getElementById("bott");
 let botaoAtivado = false;

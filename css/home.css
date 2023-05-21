@@ -139,25 +139,74 @@ form div{
     border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.posts-container div p{
+    text-align: justify;
+    font-size: 14px;
+}
+
 .post{
-    display: flex;
     padding: 1rem 2.5rem;
+    padding-left: 5rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.post div:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+}
+
 .post img{
+    position: absolute;
+    left: 9%;
     max-width: 2.5rem;
     max-height: 2.5rem;
     margin-right: .5rem;
 }
 
-.posts-container span{
-    font-weight: bold
+.post > div > div span:nth-child(2){
+    font-weight: bold;
 }
 
-.posts-container div p{
-    text-align: justify;
+.date-post{
+    color: rgb(0, 0, 0, 0.5);
+    font-weight: 500;
     font-size: 14px;
+}
+
+.post-selected{
+    position: fixed;
+    top: 60px;
+    height: 100vh;
+    z-index: 1;
+    background-color: #F2F2F2;
+    padding: 3rem
+}
+
+.post-selected img{
+    position: sticky;
+    max-width: 3rem;
+    max-height: 3rem;
+}
+
+.post-selected > div:nth-child(1){
+    display: flex;
+    align-items: center;
+    padding-bottom: 1rem;
+}
+
+.post-selected > div > div:nth-child(1){
+    display: flex;
+    align-items: center;
+}
+
+.post-selected > div:nth-child(2){
+    display: flex;
+    padding-top: 1rem;
+}
+
+.post-selected > div:nth-child(2){
+    border-top: 1px solid rgb(0, 0, 0, 0.5);
+    
 }
 
 .text-post{
