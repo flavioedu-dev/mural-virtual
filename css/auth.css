@@ -15,51 +15,6 @@ img{
     mix-blend-mode: darken;
 }
 
-.form-container{
-    margin: 0 auto;
-    width: 75%;
-}
-
-form{
-    display: flex;
-    flex-direction: column; 
-}
-
-form input{
-    margin-top: 1em;
-    border: none;
-    background-color: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    font-size: 18px;
-    padding-left: 1em;
-    font-family: inherit;
-    margin-bottom: 1.5em;
-    outline: none;
-    line-height: 26px;
-    width: 100%;
-}
-
-form input::placeholder{
-    position: absolute;
-    bottom: 3px;
-}
-
-button{
-    align-self: center;
-    width: 132px;
-    height: 42px;
-    background: rgba(92, 208, 97, 0.9);
-    color: #FFF;
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-    transition: .3s;
-}
-button:hover{
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
 .auth{
     text-align: center;
     font-size: 15px;
