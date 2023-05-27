@@ -74,11 +74,6 @@ nav{
     align-items: center;
 }
 
-.opc-per:hover{
-    background-color:#d1cfcf ;
-    padding: 10px;
-}
-
 .opc-per p{
     font-size: 140%;
     font-weight: bold;
@@ -94,12 +89,8 @@ nav{
 }
 
 .icon-per{
-    width: 5%;
+    width: 25px;
     margin-right: 10px;
-}
-
-.icon-per img{
-    width: 100%;
 }
 
 /* Form Default */
@@ -182,7 +173,9 @@ nav{
     }
 
     .opc-per:hover{
-        background-color:#d1cfcf ;
+        transform: scale(1.2);
+        transition: .3s;
+        cursor: pointer;
     }
 
     .opc-per p{
