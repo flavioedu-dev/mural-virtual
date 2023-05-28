@@ -22,3 +22,22 @@
   margin-bottom: 2rem;
   margin-top: 1rem;
 }
+
+#select-Iam{
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  padding: 0.2em 0.7em;
+  margin-bottom: 1.5em;
+  margin-top: 0.8em;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  outline: none;
+}
+
+#select-Iam option:not(:disabled){
+  color: #000;
+}

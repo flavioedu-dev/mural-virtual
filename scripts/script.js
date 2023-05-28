@@ -45,6 +45,16 @@ postsContainerArray.forEach((post) => {
         });
 })
 
+search.addEventListener("focus", () => {
+  lupa.style.display = "none";
+});
+
+search.addEventListener("blur", () => {
+  if (search.value == "") {
+    lupa.style.display = "block";
+  }
+});
+
 const meuBotao = document.getElementById("bott");
 let botaoAtivado = false;
 meuBotao.addEventListener("click", function () {
@@ -69,16 +79,6 @@ meuBotao.addEventListener("click", function () {
     attachmentFiles.style.display = "none";
     containerSearch.style = "background-color: transparent;";
     options.style.display = "none";
-  }
-});
-
-search.addEventListener("focus", () => {
-  lupa.style.display = "none";
-});
-
-search.addEventListener("blur", () => {
-  if (search.value == "") {
-    lupa.style.display = "block";
   }
 });
 
@@ -219,28 +219,21 @@ moreList.forEach((item, i) => {
 });
 
 //Menu
-let menu = document.getElementsByClassName("menu")[0];
-let ico_menu = document.getElementsByClassName("ico-menu")[0];
-let p = document.getElementsByClassName("type")[0];
-let estilo = window.getComputedStyle(p);
-let cont_p = estilo.getPropertyValue("display");
-console.log(cont_p);
+document.addEventListener("DOMContentLoaded", function(event){
+  let menu = document.getElementsByClassName("menu")[0];
+  let ico_menu = document.getElementsByClassName("ico-menu")[0];
 
-const eventoClick = new MouseEvent("click", {
-  view: window,
-  bubbles: true,
-  cancelable: true,
-});
-
-ico_menu.addEventListener("click", () => {
-  menu.style.display = "block";
-  menu.dispatchEvent(eventoClick);
-});
-
-menu.addEventListener("blur", () => {
-  if (cont_p == "block") {
-    menu.style.display = "none";
+  function fecharMenu(event) {
+    if (menu.classList.contains("open") && !menu.contains(event.target) && !ico_menu.contains(event.target)){
+      menu.classList.remove("open")
+    }
   }
+
+  ico_menu.addEventListener("click", function(){
+    menu.classList.toggle("open")
+  })
+
+  document.addEventListener("click", fecharMenu);
 });
 
 // document.getElementById('icon-sair').addEventListener('click', function() {
