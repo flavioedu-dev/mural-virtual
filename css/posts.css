@@ -1,3 +1,27 @@
+.post {
+  position: relative;
+}
+
 .posts-container {
   margin-top: 0;
+}
+
+.text-post {
+  margin-bottom: 1rem;
+}
+
+.status-post img {
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+}
+.analysis, .refused, .accepted {
+  position: absolute;
+  left: 40px;
+  bottom: 7px;
+  font-size: 15px;
+}
+
+.post > div > div span:nth-child(2) {
+  font-weight: 600;
 }
