@@ -8,7 +8,7 @@
 
 body{
     font-family: 'Inter', sans-serif;
-    background-color: #F2F2F2;
+    background-color: fffff;
 }
 
 img{
@@ -34,6 +34,11 @@ nav{
     padding-left: 20px;
     padding-top: 20px;
     padding-right: 20px;
+    /*transition: left 0.3s ease-in-out;*/
+}
+
+.menu.open{
+    display: block;
 }
 
 .header-per{

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural - Perfil</title>
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/profileA.css">
+    <!-- API -->
+    <!-- <script src="../scripts/api.js"></script> -->
+</head>
+<body>
+    <div class="menu" tabindex="0" onblur={handleBlur}>
+        <section class="header-per">
+            <div class="img-per">
+                <img src="../img/Perfil LinkedIn.png" alt="" >
+            </div>
+            <p class="nome-menu">Flávio Eduardo</p>
+            <p class="type">@aluno</p>
+        </section>
+        <div class="main-per">
+            <div class="opc-per">
+                <div class="icon-per"><img src="../img/perfil.png" alt=""></div>
+                <p>Perfil</p>
+            </div>
+            <div class="opc-per">
+                <div class="icon-per"><img src="../img/copie-o-simbolo-de-interface-de-duas-folhas-de-papel.png" alt="" ></div>
+                <p>Postagens</p>
+            </div>
+            <div class="opc-per">
+                <div class="icon-per"><img src="../img/configuracoes.png" alt=""></div>
+                <p>Configurações</p>
+            </div>
+            <div class="opc-per" id="icon-sair" onclick="logout()">
+                <div class="icon-per"><img src="../img/sair.png" alt="" ></div>
+                <p>Sair</p>
+            </div>
+        </div>
+    </div>
+    <header>
+        <nav>
+            <img class="ico-menu" src="../img/menu.png" alt="menu">
+
+            <a href="homeA.html"><img src="../img/board-logo.png" alt="board-logo"></a>
+        </nav>
+    </header>
+    <main>
+       <section class="per-usu">
+        <a href="profileA-p.html">
+            <div class="per-usu-inf">
+                <div class="per-usu-f"><img src="../img/Perfil LinkedIn.png" alt=""></div>
+            <div class="per-usu-t">
+            <p class="p1">Flávio</p>
+            <p class="p2">@professor</p>
+            </div>
+            </div>
+            <div class="per-usu-m"><img src="../img/cardapio.png" alt=""></div>
+        </a>
+       </section>
+    </main>
+
+    <script src="../scripts/profile.js"></script>
+</body>
+</html>
