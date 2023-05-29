@@ -180,7 +180,12 @@ const createPost = async () => {
   console.log(resPost)
 }
 
+// Login
 const redirectToHome = () => {
   window.location.replace("../pages/user/home.html")
+}
 
+// Admin - Home
+const showPost = (id) => {
+  window.location.replace(`./post-request.html?id=${id}`)
 }
