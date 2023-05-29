@@ -179,3 +179,8 @@ const createPost = async () => {
 
   console.log(resPost)
 }
+
+const redirectToHome = () => {
+  window.location.replace("../pages/user/home.html")
+
+}
