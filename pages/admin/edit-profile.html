@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mural - Perfil</title>
+    <title>Mural - Editar Perfil</title>
     <link rel="stylesheet" href="../../css/general.css">
-    <link rel="stylesheet" href="../../css/profile.css">
+    <link rel="stylesheet" href="../../css/edit-profile.css">
     <!-- API -->
     <!-- <script src="../../scripts/api.js"></script> -->
 </head>
@@ -20,11 +20,13 @@
             <p class="type">@aluno</p>
         </section>
         <div class="main-per">
-            <div class="opc-per">
-                <div class="icon-per"><img src="../../img/perfil.png" alt=""></div>
-                <p>Perfil</p>
-            </div>
-            <div class="opc-per">
+            <a href="./profile.html">
+                <div class="opc-per">
+                    <div class="icon-per"><img src="../../img/perfil.png" alt=""></div>
+                    <p>Perfil</p>
+                </div>
+            </a>
+                <div class="opc-per">
                 <div class="icon-per"><img src="../../img/copie-o-simbolo-de-interface-de-duas-folhas-de-papel.png" alt="" ></div>
                 <p>Postagens</p>
             </div>
@@ -42,29 +44,29 @@
         <nav>
             <img class="ico-menu" src="../../img/menu.png" alt="menu">
 
-            <a href="homeA.html"><img src="../../img/board-logo.png" alt="board-logo"></a>
+            <a href="./home.html"><img src="../../img/board-logo.png" alt="board-logo"></a>
         </nav>
     </header>
     <main>
-        <section class="person">
+        <section class="edit-data">
             <img src="../../img/Perfil LinkedIn.png" alt="profile-photo" class="img-profile">
-            <a href="./edit-profileA.html"><img src="../../img/change-profile.png" alt="change-profile" class="change-profile"></a>
-
-            <h1 class="user-name">Flávio Eduardo</h1>
-        </section>
-        <section class="person-data">
-            <p>Nome:
-                <span class="data-item">Flávio Eduardo de Moura</span>
-            </p>
-            <p>Email:
-                <span class="data-item">xflax00gmail.com</span>
-            </p>
-            <p>Número:
-                <span class="data-item">(89)94594075</span>
-            </p>
-            <p>Postagens: 
-                <span class="data-item">1</span>
-            </p>
+            <img src="../../img/camera-icon.png" alt="camera-icon">
+              <form class="form">
+                <input type="text" name="user" id="user" placeholder="Nome completo">
+                  <input type="text" name="username" id="username" placeholder="Nome de usuário">
+                  <input type="email" name="email" id="email"
+                  placeholder="E-mail">
+                  <input type="password" name="pass" id="pass" placeholder="Senha">
+                  <input type="number" name="phone" id="phone-number" placeholder="Número de telefone">
+                  <select name="Iam" id="select-Iam" onchange="checkIsAdmin()" required>
+                    <option value="I am" selected disabled class="opt-disabled">Eu sou</option>
+                    <option value="Aluno">Aluno</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Servidor">Servidor</option>
+                    <option value="Admin">Admin</option>
+                </select>
+                  <button type="btn" class="btn">Editar</button>
+              </form>
         </section>
     </main>
 

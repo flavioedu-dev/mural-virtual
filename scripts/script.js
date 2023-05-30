@@ -34,14 +34,12 @@ let file = document.getElementsByClassName("inp-file")[0];
 let postsContainer = document.getElementsByClassName("posts-container")[0];
 
 // Home
-
 const postsContainerArray = [...postsContainer.children]
-console.log(postsContainerArray)
-console.log(postsContainer.children)
-postsContainerArray.forEach((post) => {
+postsContainerArray.forEach((post, i) => {
     post.addEventListener("click", () => {
           console.log(post)
           post.setAttribute("class", "post post-selected")
+          window.location.replace(`./post.html?id=${i}`)
         });
 })
 
