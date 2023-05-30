@@ -173,49 +173,6 @@ form div{
     font-size: 14px;
 }
 
-.post-selected{
-    position: fixed;
-    top: 60px;
-    height: 100vh;
-    z-index: 1;
-    padding: 3rem;
-    background-color: #FFF;
-}
-
-.post-selected img{
-    position: sticky;
-    width: 10rem;
-}
-
-.post-selected > div:nth-child(1){
-    display: flex;
-    align-items: center;
-    padding-bottom: 1rem;
-}
-
-.post-selected > div > div:nth-child(1){
-    display: flex;
-    align-items: center;
-}
-
-.post-selected > div > div > span {
-    font-weight: 600;
-}
-
-.post-selected > div:nth-child(2){
-    display: flex;
-    padding-top: 1rem;
-}
-
-.post-selected > div:nth-child(2){
-    border-top: 1px solid rgb(0, 0, 0, 0.5);
-    
-}
-
-.text-post{
-    word-wrap: break-word;
-}
-
 .more{
     color: #0D99FF; text-decoration: underline; font-size: 12px; padding-left: 2px;
 }
