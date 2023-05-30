@@ -150,6 +150,17 @@ nav{
         background-color: #ffff;
     }
 
+    nav{
+        border-bottom: 0px solid #000;
+        position: fixed;
+        right: 0.2%;
+        bottom: 92%;
+    }
+
+    .ico-menu{
+        display: none;
+    }
+
     .menu{
         display: flex;
         flex-direction: column;
