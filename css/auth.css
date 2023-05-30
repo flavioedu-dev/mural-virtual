@@ -31,3 +31,9 @@ img{
     color: rgba(92, 208, 97, 0.9);
     text-decoration: none;
 }
+
+@media (min-width:600px){
+    .auth{
+        margin-top: 15px;
+    }
+}
