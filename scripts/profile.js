@@ -1,22 +1,30 @@
 //Menu
-let menu = document.getElementsByClassName("menu")[0]
-let ico_menu = document.getElementsByClassName("ico-menu")[0]
+document.addEventListener("DOMContentLoaded", function(event){
+    let menu = document.getElementsByClassName("menu")[0];
+    let ico_menu = document.getElementsByClassName("ico-menu")[0];
+  
+    function fecharMenu(event) {
+      if (menu.classList.contains("open") && !menu.contains(event.target) && !ico_menu.contains(event.target)){
+        menu.classList.remove("open")
+      }
+    }
+  
+    ico_menu.addEventListener("click", function(){
+      menu.classList.toggle("open")
+    })
+  
+    document.addEventListener("click", fecharMenu);
+  });
 
-const eventoClick = new MouseEvent('click', {
-    view: window,
-    bubbles: true,
-    cancelable: true
-});
+  let search = document.getElementsByClassName("inp-search")[0];
+  let lupa = document.getElementsByClassName("search-icon")[0];
 
-ico_menu.addEventListener('click', () =>{
-    menu.style.display = 'block'
-    menu.dispatchEvent(eventoClick);
-});
-
-menu.addEventListener('blur', () => {
-    menu.style.display = 'none'
-})
-
-document.getElementById('icon-sair').addEventListener('click', function() {
-    window.location.href = '../pages/login.html';
-});
+  search.addEventListener("focus", () => {
+    lupa.style.display = "none";
+  });
+  
+  search.addEventListener("blur", () => {
+    if (search.value == "") {
+      lupa.style.display = "block";
+    }
+  });
