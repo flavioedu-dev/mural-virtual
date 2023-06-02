@@ -18,19 +18,7 @@
     <meta name="theme-color" content="#ffffff">
     <!-- API -->
     <script src="../../scripts/api.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('../../service-worker.js')
-              .then((registration) => {
-                console.log('Service Worker registrado com sucesso:', registration);
-              })
-              .catch((error) => {
-                console.log('Falha ao registrar o Service Worker:', error);
-              });
-          });
-        }
-      </script>      
+    <script src="../../scripts/sw.js"></script>
 </head>
 <body>
     <header>

@@ -1,14 +1,14 @@
 // service-worker.js
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open('cache-name')
+    caches.open('mv-pwa-cache')
       .then((cache) => {
         return cache.addAll([
           '/',
+          '/pages',
           './css',
           './scripts',
-          './img/board-logo-128px.png',
-          './img/board-logo-512px.png'
+          './img',
         ]);
       })
   );
