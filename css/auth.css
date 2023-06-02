@@ -22,13 +22,13 @@ img{
 }
 
 .auth:hover{
-    color: rgb(92, 208, 98);
+    color: #5cd062;
     cursor: pointer;
     text-decoration: underline;
 }
 
 .auth a{
-    color: rgba(92, 208, 97, 0.9);
+    color: #5cd061e6;
     text-decoration: none;
 }
 
