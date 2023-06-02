@@ -71,8 +71,9 @@ main{
     }
 
     .change-profile{
-        position: absolute;
-        right: 40;
+        position: fixed;
+        right: 220px;
+
     }
 
     .person-data p:not(:last-child){
