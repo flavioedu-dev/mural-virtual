@@ -177,9 +177,7 @@ form div{
     color: #0D99FF; text-decoration: underline; font-size: 12px; padding-left: 2px;
 }
 
-@media (min-width:600px){
-
-
+@media (min-width:700px){
 
     nav{
         border-bottom: 0px solid #000;

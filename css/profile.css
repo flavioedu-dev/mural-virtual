@@ -66,14 +66,18 @@ main{
         margin-top: 1.5rem;
     }
 
+    .person div{
+        position: relative;
+    }
+
     main{
         padding: 0 0px;
     }
 
     .change-profile{
-        position: fixed;
-        right: 220px;
-
+        position: absolute;
+        right: 50px;
+        top: 0;
     }
 
     .person-data p:not(:last-child){
