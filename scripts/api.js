@@ -55,15 +55,29 @@ const login = async () => {
       "content-type": "application/json",
     },
     body: JSON.stringify(user),
-  }).then((res) => res.json());
+  }).then((res) => res);
 
-  if (res.headers.token) {
-    localStorage.setItem("authToken", res.headers.token);
-    localStorage.setItem("userId", res.body.id_usuario);
-    localStorage.setItem("userName", res.body.nome);
-
-    window.location.replace("../pages/home.html");
+  const data = await res.json()
+  if(res.status === 200) {
+    window.location.href = "../pages/user/home.html"
+    return
   }
+  console.log(data)
+
+  const resLogin = document.querySelector(".res_login")
+  resLogin.innerHTML = ""
+  const resParaph = document.createElement("p")
+  resParaph.setAttribute("class", "res_login")
+  resParaph.innerText= "Crendenciais inválidas."
+  resLogin.appendChild(resParaph)
+
+  // if (res.headers.token) {
+  //   localStorage.setItem("authToken", res.headers.token);
+  //   localStorage.setItem("userId", res.body.id_usuario);
+  //   localStorage.setItem("userName", res.body.nome);
+
+  //   window.location.replace("../pages/home.html");
+  // }
 };
 
 const checkTokenIsValid = async () => {
