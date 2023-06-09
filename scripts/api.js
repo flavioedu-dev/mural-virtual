@@ -58,11 +58,15 @@ const login = async () => {
   }).then((res) => res);
 
   const data = await res.json()
-  if(res.status === 200) {
+  console.log(data)
+  if(data.includes("admin")) {
+    window.location.href = "../pages/admin/home.html"
+    return
+  }else if (data.includes("user")) {
     window.location.href = "../pages/user/home.html"
     return
   }
-  console.log(data)
+
 
   const resLogin = document.querySelector(".res_login")
   resLogin.innerHTML = ""
@@ -70,14 +74,6 @@ const login = async () => {
   resParaph.setAttribute("class", "res_login")
   resParaph.innerText= "Crendenciais inválidas."
   resLogin.appendChild(resParaph)
-
-  // if (res.headers.token) {
-  //   localStorage.setItem("authToken", res.headers.token);
-  //   localStorage.setItem("userId", res.body.id_usuario);
-  //   localStorage.setItem("userName", res.body.nome);
-
-  //   window.location.replace("../pages/home.html");
-  // }
 };
 
 const checkTokenIsValid = async () => {
