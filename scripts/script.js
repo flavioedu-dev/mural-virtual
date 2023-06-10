@@ -62,7 +62,7 @@ meuBotao.addEventListener("click", function () {
     lupa.style.display = "none";
     botaoAtivado = true;
     attachment.style.display = "block";
-    containerSearch.style = "background-color: #E0E0E0;";
+    containerSearch.style = "background-color: #F5F4F4;";
     options.style.display = "block";
     if (attachmentFiles.children.length !== 0) {
       attachmentFiles.style.display = "flex";
@@ -88,13 +88,14 @@ const renderPosts = (array) => {
     divPost.setAttribute("class", "post");
 
     const imgPost = document.createElement("img");
-    imgPost.setAttribute("src", "../img/Perfil LinkedIn.png");
+    imgPost.setAttribute("src", "/img/Perfil LinkedIn.png");
     imgPost.setAttribute("alt", "profile");
 
     const innerDivPost = document.createElement("div");
     const innerDivSpan = document.createElement("span");
     const innerDivP = document.createElement("p");
     innerDivP.setAttribute("class", "text-post");
+    innerDivSpan.style.fontWeight = "bold";
 
     innerDivSpan.innerText = "Flávio";
     innerDivP.innerText = post;
@@ -117,11 +118,13 @@ options.onclick = (e) => {
 
   if (e.target.lastChild.data === "Limpar") {
     pesq.value = "";
+    attachmentFiles.innerHTML = "";
   }
 
   if (e.target.lastChild.data === "Enviar") {
     posts.push(pesq.value);
     pesq.value = "";
+    attachmentFiles.innerHTML = "";
 
     renderPosts(posts);
   }
@@ -159,7 +162,7 @@ file.onchange = () => {
     newLink.setAttribute("class", `link-item`);
 
     let deleteIcon = document.createElement("img");
-    deleteIcon.setAttribute("src", "../img/x-icon.png");
+    deleteIcon.setAttribute("src", "/img/x-icon.png");
     deleteIcon.setAttribute("alt", "delete");
     deleteIcon.setAttribute("class", "delete-icon");
 
