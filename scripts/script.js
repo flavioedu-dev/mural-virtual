@@ -1,7 +1,3 @@
-const redirectToLogin = () => {
-  window.location.replace("./pages/login.html");
-};
-
 // --- Register ---
 const checkIsAdmin = () => {
   const optSelected = document.getElementById("select-Iam");
@@ -217,24 +213,6 @@ moreList.forEach((item, i) => {
 
     item.parentNode.innerHTML = beforeTexts[i];
   });
-});
-
-//Menu
-document.addEventListener("DOMContentLoaded", function(event){
-  let menu = document.getElementsByClassName("menu")[0];
-  let ico_menu = document.getElementsByClassName("ico-menu")[0];
-
-  function fecharMenu(event) {
-    if (menu.classList.contains("open") && !menu.contains(event.target) && !ico_menu.contains(event.target)){
-      menu.classList.remove("open")
-    }
-  }
-
-  ico_menu.addEventListener("click", function(){
-    menu.classList.toggle("open")
-  })
-
-  document.addEventListener("click", fecharMenu);
 });
 
 // document.getElementById('icon-sair').addEventListener('click', function() {
