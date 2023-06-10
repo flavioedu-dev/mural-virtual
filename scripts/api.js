@@ -1,22 +1,56 @@
 const url = "http://localhost:8000";
 
+const handleShowError = (path, sendErr) => {
+  const resContainer = document.querySelector(`.res_${path}`)
+  resContainer.innerHTML = ""
+  const resParaph = document.createElement("p")
+  resParaph.setAttribute("class", `.res_${path}`)
+  resParaph.innerText= sendErr
+  resContainer.appendChild(resParaph)
+}
+
 // User
 const register = async () => {
   const nome = document.getElementById("user").value;
   const email = document.getElementById("email").value;
   const senha = document.getElementById("pass").value;
   const confirmaSenha = document.getElementById("confirm-pass").value;
+  const username = document.getElementById("username").value;
+  const tipo = document.getElementById("select-Iam").value;
+
+  let user = {
+    nome,
+    username,
+    email,
+    senha,
+    tipo
+  };
+
+  // Checking if all fields are filled
+  for(i in user) {
+    if(user[i].trim() === ""){
+      i = i.charAt(0).toUpperCase() + i.slice(1)
+      if(i === "Username") i = "Nome de usuário"
+      return alert(`É necessário preencher o campo ${i}.`)
+    }
+  }
 
   if (senha !== confirmaSenha) {
-    console.log("As senhas precisam ser iguais!");
+    alert("As senhas precisam ser iguais!");
     return;
   }
 
-  const user = {
-    nome,
-    email,
-    senha,
-  };
+  if(tipo === "unselected"){
+    alert("Selecione o seu tipo de perfil.")
+    return
+  }
+
+  if(tipo === "Admin") {
+    console.log("is admin")
+    const adminCode = document.getElementById("admin-code").value
+    user = {...user, adminCode }
+    console.log(adminCode)
+  }
 
   const res = await fetch(`${url}/users/register`, {
     method: "POST",
@@ -31,11 +65,35 @@ const register = async () => {
   const data = await res.json();
   console.log(data);
 
+
+  let erro = null
+  if(data.includes("Username already")) {
+    erro = "Nome de usuário já cadastrado."
+  }else if(data.includes("Invalid email")) {
+    erro = "Email inválido."
+  }else if(data.includes("Email already")) {
+    erro = "Email já cadastrado."
+  }else if(data.includes("at least")) {
+    erro = "A senha precisa ter no mínimo 8 caracteres."
+  }else if(data.includes("code invalid")) {
+    erro = "Código de acesso inválido."
+  }
+
+  if(erro){
+    handleShowError("register", erro)
+    return
+  }
+
   // Checking if the user was successfully created and redirecting
-  if (res.status === 201) {
+  if(data.includes("Admin")) {
     console.log("Usuário criado com sucesso!");
     setTimeout(() => {
-      window.location.replace("../pages/login.html");
+      window.location.href= "../pages/admin/home.html";
+    }, 1000);
+  }else if(data.includes("User")) {
+    console.log("Administrador criado com sucesso!");
+    setTimeout(() => {
+      window.location.href= "../pages/user/home.html";
     }, 1000);
   }
 };
@@ -67,13 +125,7 @@ const login = async () => {
     return
   }
 
-
-  const resLogin = document.querySelector(".res_login")
-  resLogin.innerHTML = ""
-  const resParaph = document.createElement("p")
-  resParaph.setAttribute("class", "res_login")
-  resParaph.innerText= "Crendenciais inválidas."
-  resLogin.appendChild(resParaph)
+  handleShowError("login", "Credenciais inválidas.")
 };
 
 const checkTokenIsValid = async () => {

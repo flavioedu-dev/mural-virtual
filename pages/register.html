@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/register.css">
+    <!-- API -->
+    <script src="../scripts/api.js"></script>
 </head>
 <body>
     <div class="all">
@@ -24,7 +26,7 @@
                     <input type="password" name="pass" id="pass" placeholder="Senha">
                     <input type="password" name="confirm-pass" id="confirm-pass" placeholder="Confirmar Senha">
                     <select name="Iam" id="select-Iam" onchange="checkIsAdmin()" required>
-                        <option value="I am" selected disabled class="opt-disabled">Eu sou</option>
+                        <option value="unselected" selected disabled class="opt-disabled">Eu sou</option>
                         <option value="Aluno">Aluno</option>
                         <option value="Professor">Professor</option>
                         <option value="Servidor">Servidor</option>
@@ -34,9 +36,12 @@
                 <button type="button" onclick="register()" class="btn">Cadastrar</button>
             </form>
             <p class="auth"><a href="login.html">Já possui uma conta? Entrar</a></p>
-    </div>
+            <div class="res_register">
 
-        <script src="../scripts/api.js"></script>
+            </div>
+        </div>
+    </div>
+        
         <script src="../scripts/script.js"></script>
 </body>
 </html>
