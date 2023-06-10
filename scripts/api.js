@@ -244,7 +244,7 @@ const createPost = async () => {
 
 // Login
 const redirectToHome = () => {
-  window.location.replace("../pages/user/home.html")
+  window.location.href = "../pages/user/home.html"
 }
 
 // Admin - Home
