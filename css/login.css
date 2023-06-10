@@ -94,7 +94,7 @@ img{
     position: absolute;
     width: 100%;
     text-align: center;
-    bottom: -1.5rem;
+    bottom: -2.5rem;
 }
 
 @media (min-width:600px){
@@ -139,6 +139,6 @@ img{
     }
 
     .res_login {
-        bottom: .5rem;
+        bottom: 1rem;
     }
 }
