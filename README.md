@@ -1,3 +1,4 @@
 # Mural Virtual
+> Mural para compartilhamento e gerenciamento de informações, trabalho de conclusão da disciplina Projeto Integrador I.
 
-Reponsividade atual: 500px
+<h3>Em desenvolvimento...</h3>
