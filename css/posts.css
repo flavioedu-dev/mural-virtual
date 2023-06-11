@@ -25,3 +25,10 @@
 .post > div > div span:nth-child(2) {
   font-weight: 600;
 }
+
+@media (min-width: 700px) {
+  .post-div img{
+    left: 0;
+    margin-left: 35px;
+  }
+}

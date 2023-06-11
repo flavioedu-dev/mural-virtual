@@ -208,12 +208,16 @@ form div{
         
     }
 
+    .post-div{
+        position: relative;
+    }
+
     .post img{
         position: absolute;
-        left: 32%;
+        left: -45px;
         max-width: 2.5rem;
         max-height: 2.5rem;
-        margin-right: .5rem;
+        margin-right: 0;
     }
     
 }

@@ -2,7 +2,6 @@
   height: calc(100vh - 59px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   z-index: 1;
   padding: 3rem;
   background-color: #FFF;
@@ -58,4 +57,16 @@
 
 .choices img {
   width: 3rem;
+}
+
+@media (min-width: 700px){
+  .post-request{
+    width: 600px;
+  }
+}
+
+@media (min-width: 850px){
+  .post-request{
+    width: 800px;
+  }
 }
