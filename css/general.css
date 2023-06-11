@@ -165,6 +165,14 @@ nav{
     
     }
 
+    .ico-logo {
+        margin-right: 1rem;
+    }
+    
+    .ico-logo:hover {
+        transform: scale(1.1);
+    }
+
     .ico-menu{
         display: none;
     }
