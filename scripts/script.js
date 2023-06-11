@@ -81,31 +81,60 @@ meuBotao.addEventListener("click", function () {
 // Rendering posts
 const renderPosts = (array) => {
   postsContainer.innerHTML = ""
-  array.forEach((post) => {
+  array.forEach((post) => { // post > post-div > div > img - span < span
     // Creating post item
-    const divPost = document.createElement("div");
-    divPost.setAttribute("class", "post");
+    const newPost = document.createElement("div");
+    newPost.setAttribute("class", "post");
 
+    // Creating div with class "post-div"
+    const postDiv1 = document.createElement("div");
+    postDiv1.setAttribute("class", "post-div");
+
+    // Creating div within of div with class "post-div"
+    const innerPostDiv1 = document.createElement("div");
+
+    // Creating profile img within inner div
     const imgPost = document.createElement("img");
     imgPost.setAttribute("src", "/img/Perfil LinkedIn.png");
     imgPost.setAttribute("alt", "profile");
 
-    const innerDivPost = document.createElement("div");
+    // Creating span within inner div
     const innerDivSpan = document.createElement("span");
-    const innerDivP = document.createElement("p");
-    innerDivP.setAttribute("class", "text-post");
-    innerDivSpan.style.fontWeight = "bold";
-
     innerDivSpan.innerText = "Flávio";
-    innerDivP.innerText = post;
 
-    innerDivPost.appendChild(innerDivSpan);
-    innerDivPost.appendChild(innerDivP);
+    // Creating span below the inner div
+    const innerDivSpan2 = document.createElement("span");
+    innerDivSpan2.setAttribute("class", "date-post")
+    let data = new Date()
+    innerDivSpan2.innerText = `${data.toLocaleDateString()}`;
 
-    divPost.appendChild(imgPost);
-    divPost.appendChild(innerDivPost);
+    // Inserting img and span in the inner div
+    innerPostDiv1.appendChild(imgPost);
+    innerPostDiv1.appendChild(innerDivSpan);
 
-    postsContainer.appendChild(divPost);
+    // Inserting inner div and span within div with class "post-div"
+    postDiv1.appendChild(innerPostDiv1)
+    postDiv1.appendChild(innerDivSpan2)
+
+
+    // Creating div below div with class "post-div"
+    const postDiv2 = document.createElement("div");
+    
+    // Creating paragraph within div below
+    const innerDiv2P = document.createElement("p");
+    innerDiv2P.setAttribute("class", "text-post");
+    innerDiv2P.innerText = post;
+
+    // Inserting paragraph within div below
+    postDiv2.appendChild(innerDiv2P)
+
+
+    // Inserting div with class "post-div" and div below it within post item
+    newPost.appendChild(postDiv1)
+    newPost.appendChild(postDiv2)
+
+    // Inserting new post in posts container
+    postsContainer.appendChild(newPost);
   });
 };
 
