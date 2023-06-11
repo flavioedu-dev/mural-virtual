@@ -110,14 +110,16 @@ const posts = [];
 
 // Handle form options
 options.onclick = (e) => {
-  console.log(e.target.lastChild.data);
-
   if (e.target.lastChild.data === "Limpar") {
     pesq.value = "";
     attachmentFiles.innerHTML = "";
   }
 
   if (e.target.lastChild.data === "Enviar") {
+    if(pesq.value.length < 20){
+      alert("Aviso muito curto!")
+      return
+    }
     posts.push(pesq.value);
     pesq.value = "";
     attachmentFiles.innerHTML = "";
