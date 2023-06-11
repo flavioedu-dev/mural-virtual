@@ -8,9 +8,8 @@ document.addEventListener("DOMContentLoaded", function(event){
       menu.classList.remove("open")
     }
   }
-
   ico_menu.addEventListener("click", function(){
-    menu.classList.toggle("open")
+    menu.classList.add("open")
   })
 
   document.addEventListener("click", fecharMenu);
@@ -21,19 +20,27 @@ const menuOptions = document.getElementsByClassName("opc-per")
 const optionsMenu = [...menuOptions]
 optionsMenu.forEach((option) => {
   option.onclick = () => {
-    console.log(option.children[1].textContent)
+    // Getting path
+    let path = window.location.pathname
+    if(path.includes("user")){
+      path = "user"
+    }else if(path.includes("admin")){
+      path = "admin"
+    }
+    // Redirecting to the specified page
     switch(option.children[1].textContent) {
       case "Perfil":
-        window.location.href = "/pages/user/profile.html";
+        window.location.href = `/pages/${path}/profile.html`;
         break
       case "Postagens":
-        window.location.href = "/pages/user/posts.html";
+        if (path === "admin") return window.location.href = `/pages/${path}/post-request.html`;
+        window.location.href = `/pages/${path}/posts.html`;
         break
       case "Configurações":
         alert("Página em desenvolvimento...")
         break
       case "Sair":
-        window.location.href = "/pages/login.html";
+        window.location.href = `/pages/login.html`;
         break
       default:
         break
