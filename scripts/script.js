@@ -67,7 +67,9 @@ meuBotao.addEventListener("click", function () {
   } else if (botaoAtivado == true) {
     pesq.style.display = "none";
     search.style.display = "block";
-    lupa.style.display = "block";
+    if (search.value == "") {
+      lupa.style.display = "block";
+    }
     botaoAtivado = false;
     attachment.style.display = "none";
     attachmentFiles.style.display = "none";
