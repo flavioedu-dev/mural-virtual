@@ -78,6 +78,7 @@ meuBotao.addEventListener("click", function () {
 
 // Rendering posts
 const renderPosts = (array) => {
+  postsContainer.innerHTML = ""
   array.forEach((post) => {
     // Creating post item
     const divPost = document.createElement("div");
@@ -221,6 +222,10 @@ moreList.forEach((item, i) => {
 //     window.location.href = '../pages/login.html';
 //   });
 
-//Filtragem
+// Filtering of posts
+const pesquisa = document.querySelector(".inp-search");
 
-let pesquisa = document.getElementsByClassName("inp-search")[0];
+pesquisa.oninput = (e) => {
+  const newposts = posts.filter(post => post.includes(e.target.value))
+  renderPosts(newposts)
+}
