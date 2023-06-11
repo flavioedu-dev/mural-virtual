@@ -28,7 +28,7 @@
 
 @media (min-width: 700px) {
   .post-div img{
-    left: 0;
+    left: -5rem;
     margin-left: 35px;
   }
 }
