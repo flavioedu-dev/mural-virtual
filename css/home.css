@@ -173,6 +173,10 @@ form div{
     font-size: 14px;
 }
 
+.text-post {
+    cursor: pointer;
+}
+
 .more{
     color: #0D99FF; text-decoration: underline; font-size: 12px; padding-left: 2px;
 }

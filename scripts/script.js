@@ -1,22 +1,4 @@
-// --- Register ---
-const checkIsAdmin = () => {
-  const optSelected = document.getElementById("select-Iam");
-  const form = document.querySelector(".user-data");
 
-  if (optSelected.value === "Admin") {
-    const inpAdminCode = document.createElement("input");
-    inpAdminCode.setAttribute("type", "password");
-    inpAdminCode.setAttribute("id", "admin-code");
-    inpAdminCode.setAttribute("placeholder", "Código de acesso");
-    form.appendChild(inpAdminCode);
-    return;
-  }
-
-  try {
-    const admInpCode = document.getElementById("admin-code");
-    form.removeChild(admInpCode);
-  } catch {}
-};
 
 // Search input
 let search = document.getElementsByClassName("inp-search")[0];

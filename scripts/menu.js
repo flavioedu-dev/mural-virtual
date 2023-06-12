@@ -22,14 +22,15 @@ optionsMenu.forEach((option) => {
   option.onclick = () => {
     // Getting path
     let path = window.location.pathname
-    if(path.includes("user")){
+    if(path.includes("user/")){
       path = "user"
-    }else if(path.includes("admin")){
+    }else if(path.includes("admin/")){
       path = "admin"
     }
     // Redirecting to the specified page
     switch(option.children[1].textContent) {
       case "Perfil":
+        if (path === "admin") return window.location.href = `/pages/${path}/profile-users.html`;
         window.location.href = `/pages/${path}/profile.html`;
         break
       case "Postagens":
