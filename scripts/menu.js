@@ -34,7 +34,7 @@ optionsMenu.forEach((option) => {
         window.location.href = `/pages/${path}/profile.html`;
         break
       case "Postagens":
-        if (path === "admin") return window.location.href = `/pages/${path}/post-request.html`;
+        if (path === "admin") return window.location.href = `/pages/${path}/posts-requests.html`;
         window.location.href = `/pages/${path}/posts.html`;
         break
       case "Configurações":
