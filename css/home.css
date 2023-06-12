@@ -182,8 +182,8 @@ form div{
     nav{
         border-bottom: 0px solid #000;
         position: fixed;
-        right: 0.2%;
-        bottom: 92%;
+        right: 1%;
+        top: 2%;
     }
 
     .ico-menu{
@@ -193,12 +193,9 @@ form div{
     main{
         width: 45%;
         z-index: 3;
-        /* margin-left: 25%;
-        margin-top: 0%;*/
         height: 100%; 
         border-right: 1px solid rgba(0, 0, 0, 0.116);
         border-left: 1px solid rgba(0, 0, 0, 0.116);
-        /* margin-left: 29.5%; */
     }
 
     main form {
@@ -218,6 +215,10 @@ form div{
         max-width: 2.5rem;
         max-height: 2.5rem;
         margin-right: 0;
+    }
+
+    #bott {
+        right: 1%;
     }
     
 }

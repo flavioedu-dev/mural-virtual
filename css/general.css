@@ -132,7 +132,7 @@ nav{
     align-self: center;
     width: 132px;
     height: 42px;
-    background: rgba(92, 208, 97, 0.9);
+    background: #5cd061e6;
     color: #FFF;
     border: none;
     border-radius: 10px;
@@ -163,10 +163,6 @@ nav{
         bottom: 92%;
         z-index: 2;
     
-    }
-
-    .ico-logo {
-        margin-right: 1rem;
     }
     
     .ico-logo:hover {
@@ -219,6 +215,4 @@ nav{
     .icon-per{
         width: 30px;
     }
-
 }
-
