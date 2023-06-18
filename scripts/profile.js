@@ -28,3 +28,9 @@
   //     lupa.style.display = "block";
   //   }
   // });
+
+  let mudar_ft_per = document.getElementById('butt-img')
+function selectarq(){
+  
+}
+ 

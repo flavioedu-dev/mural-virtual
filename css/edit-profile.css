@@ -11,6 +11,12 @@
   object-fit: cover;
 }
 
+#butt-img{
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
 .edit-data img:nth-child(2) {
   max-width: 30px;
   margin-bottom: 1rem;
